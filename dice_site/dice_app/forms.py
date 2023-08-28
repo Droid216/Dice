@@ -2,7 +2,6 @@ import re
 
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm, UserChangeForm, PasswordChangeForm
-from django_registration.forms import RegistrationFormUniqueEmail
 from django.contrib.auth.models import User
 
 from dice_app.models import Profile
