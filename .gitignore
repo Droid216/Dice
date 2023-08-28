@@ -1,0 +1,4 @@
+venv/
+dice_site/dice_site/settings.py
+.idea/
+.env
