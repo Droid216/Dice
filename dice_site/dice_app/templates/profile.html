@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block title %}Профиль {{ user.username }}{% endblock %}
+{% block head_menu %}
+<div class="profile-menu">
+    <form action="{% url 'profile' %}" method="post">
+        {% csrf_token %}
+        <button class="logout-btn" name="logout-btn" type="submit" >Logout</button>
+    </form>
+</div>
+{% endblock %}
+{% block main %}
+<section class="section-profile">
+    <div class="head-profile">
+        <div> {{ profile.user.username }}</div>
+        <img src="{{ profile.avatars.url }}" alt="Avatar" onclick="clipAvatars();">
+        <button class="avatars-button" type="button" onclick="clipAvatars();">ИЗМЕНИТЬ</button>
+    </div>
+    <form method="post" class="profile-desc">
+        {% csrf_token %}
+        {% for field in form_change %}
+            {% if not forloop.last %}
+                {% if field.errors %}
+                    {{ field.errors }}
+                {% endif %}
+                <div class="profile-data">
+                    <div class="profile-label">{{ field.label }}:</div>
+                    <div class="profile-input">{{ field }}</div>
+                </div>
+                {% endif %}
+        {% endfor %}
+        {% for field in form_profile %}
+            {% if field.errors %}
+                {{ field.errors }}
+            {% endif %}
+            <div class="profile-data">
+                <div class="profile-label">{{ field.label }}:</div>
+                <div class="profile-input">{{ field }}</div>
+            </div>
+        {% endfor %}
+            <div class="profile-data">
+                <div class="profile-label">Пароль:</div>
+                <div class="profile-input"><input type="button" value="Сменить пароль" onclick="document.location='/profile/change_password/'"></div>
+            </div>
+        <button type="submit" name="profile-save-btn">СОХРАНИТЬ</button>
+    </form>
+    <div class="modal-window">
+        <form method="post">
+            {% csrf_token %}
+            <input type="hidden" name="selected_avatar_url" id="selected-avatar-url">
+            <div class="modal-avatars">
+                <div class="body-modal-avatars">
+                    {% for avatar in avatars_list %}
+                    <div class="img-modal-avatars"><img src="{{ avatar }}" onclick="selectAvatar(this)"></div>
+                    {% endfor %}
+                </div>
+                <div class="modal-button">
+                    <div><button type="submit" name="avatars-save-btn">Сохранить</button></div>
+                    <div><button type="button" onclick="clipAvatars();">Закрыть</button></div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+{% endblock %}

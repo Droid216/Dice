@@ -1,0 +1,47 @@
+{% load static %}
+<div class="head-header">
+    <div class="logo">
+        <button type="button" class="menu-button" onclick="menu_open();"></button>
+        <div><a href="{% url 'records' %}"><img src="{% static 'icon\dice_logo.png' %}"></a></div>
+        <div><a href="{% url 'records' %}">D I C E</a></div>
+    </div>
+
+    <div class="menu">
+        <div class="city">
+            <form id="city-form" method="post">
+                {% csrf_token %}
+                <div class="point"></div>
+                <select class="city-selector" name="city_id" onchange="this.form.submit()">
+                    {% for city in cities %}
+                    <option value="{{ city.id }}"  {% if city.id == selected_city.id %}selected{% endif %}>{{ city.city }}</option>
+                    {% endfor %}
+                </select>
+            </form>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{% url 'records' %}">Запись на игру</a></li>
+                <li><a href="">Магазин</a></li>
+                <li><a href="">О нас</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+<div class="link">
+    <div class="icon">
+        <div><a href="https://www.instagram.com/dnd_almaty/" target="blank"><img src="{% static 'icon\instagram.png' %}" align="Instagram" title="Instagram"></a></div>
+        <div>Instagram</div>
+    </div>
+    <div class="icon">
+        <div><a href="https://t.me/dnd_almaty" target="blank"><img src="{% static 'icon\telegram.png' %}" align="Telegram" title="Telegram"></a></div>
+        <div>Channel</div>
+    </div>
+    <div class="icon">
+        <div><a href="https://t.me/dnd_almaty_chat" target="blank"><img src="{% static 'icon\chat.png' %}" align="Chat" title="Chat"></a></div>
+        <div>Chat</div>
+    </div>
+    <div class="icon">
+        <div><a href="https://www.instagram.com/hobbytown_kz/" target="blank"><img src="{% static 'icon\hobby-town.png' %}" align="Hobby Town" title="Hobby Town"></a></div>
+        <div>Hobby Town</div>
+    </div>
+</div>

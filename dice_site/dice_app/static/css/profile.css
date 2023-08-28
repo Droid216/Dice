@@ -1,0 +1,176 @@
+.section-profile {
+    background-color: rgb(235, 255, 255);
+	margin: 20px 0 0 0;
+	padding: 20px 20px;
+	border-radius: 1em;
+	box-shadow: 0 4px 8px 0 rgba(75, 190, 250, 0.5);
+}
+
+.head-profile {
+	min-width: 100px;
+	max-width: 300px;
+	font-size: x-large;
+	font-weight: bold;
+}
+
+
+.head-profile img {
+    max-width: 120px;
+    margin-top: 15px;
+}
+
+.profile-menu {
+	display: flex;
+	float: right;
+}
+
+.profile-menu form {
+	position: relative;
+	margin: 0 auto;
+}
+
+.logout-btn {
+	height: 100%;
+	border: none;
+	background: white;
+	font-size: x-large;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.logout-btn:after {
+	display: block;
+	left: 0;
+	width: 0;
+	height: 2px;
+	content: "";
+	transition: width 0.3s ease-out;
+	background-color: black;
+}
+
+.logout-btn:hover:after, .logout-btn:focus:after {
+	width: 100%;
+}
+
+.modal-window {
+	display: none;
+	width: 1vw;
+	height: 1vh;
+	align-items: center;
+	justify-content: center;
+	z-index: 30;
+	position: fixed;
+	background-color: rgb(255, 255, 255, 0.7);
+}
+
+.modal-avatars {
+	display: flex;
+	flex-direction: column;
+	border: solid 2px;
+	max-width: 390px;
+	width: 90%;
+	height: 600px;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: rgb(255, 255, 255);
+}
+
+.body-modal-avatars {
+	position: static;
+	overflow-y: scroll;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 5px 20px;
+}
+
+.img-modal-avatars img {
+	max-width: 100px;
+}
+
+.modal-button {
+	display: flex;
+	justify-content: space-around;
+	min-width: all;
+	padding: 10px 20px;
+}
+
+.selected {
+	background: rgba(75, 190, 250);
+	border-radius: 1em;
+}
+
+
+.profile-desc button, .modal-button button, .avatars-button {
+	background-color: rgba(75, 190, 250);
+	border: none;
+	border-radius: 0.5em;
+	transition: 0.2s;
+	color: white;
+	padding: 10px 16px;
+	text-align: center;
+	justify-content: center;
+	font-size: 20px;
+	display: block;
+	width: 120px;
+}
+
+.profile-desc button, .avatars-button {
+	padding: 10px 10px;
+	font-size: 14px;
+	margin-top: 5px;
+	margin-bottom: 10px;
+}
+
+.modal-button button {
+	font-size: 14px;
+}
+
+.profile-desc button {
+	margin-top: 20px;
+}
+
+.profile-desc button:hover, .modal-button button:hover, .avatars-button:hover {
+	background-color: rgb(80, 255, 140);
+}
+
+.profile-desc button:active, .modal-button button:active, .avatars-button:active {
+	background-color: rgb(75, 190, 250);
+}
+
+.profile-desc {
+	margin-top: 20px;
+}
+
+.profile-data {
+	display: flex;
+	min-width: 290px;
+	max-width: 400px;
+	justify-content: space-between;
+	margin-bottom: 10px;
+}
+
+.profile-desc select, .profile-desc input {
+	background-color: white;
+	border: solid 2px;
+	width: 194px;
+	height: 30px;
+	border-radius: 7px;
+	padding: 5px 10px;
+	font-size: 14px;
+	box-sizing: border-box;
+}
+
+.profile-label {
+	font-weight: bold;
+	font-family: "Poiret One", sans-serif;
+	line-height: 30px;
+}
+
+.profile-input {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}

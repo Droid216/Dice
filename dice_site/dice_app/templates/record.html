@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Запись на игру{% endblock %}
+{% block head_menu %}
+<div class="record-menu">
+    <form method="GET">
+        <input type="text" name="search_query" placeholder="Искать игру...">
+        <button class="search-button" type="submit"></button>
+    </form>
+<!--    <button type="button" class="filter-button"> Фильтр</button>-->
+</div>
+{% endblock %}
+{% block main %}
+{% for day in days %}
+<section class="section-record">
+    <div class="head-record">
+        <div>{{ day.date|date:"d.m.Y(D)" }}</div>
+        <div class="center">Игр: {{ day.count_game }} </div>
+    </div>
+    <div class="owl-carousel owl-theme" id="slider">
+    {% for game in games %}
+    {% if game.date == day.date %}
+        <div class="card">
+            <div class="head-card">
+                <div class="card-img">
+                    <img class="img-record" src="{{ game.image.url }}">
+                    <img class="img-more" src="{% static 'icon\more.png' %}">
+                </div>
+                <div class="card-desc">
+                    <ul>
+                        <li class="card-name">{{ game.name }}</li>
+                        <li>Мастер: {{ game.master.name }} {{ game.master.last_name|first }}.</li>
+                        <li>{{ game.system }}: {{ game.type_game }}</li>
+                        <li>Стоимость: {{ game.price }}</li>
+                        <li>Время: {{ game.time }}</li>
+                        <li>{{ game.room }}</li>
+                    </ul>
+                </div>
+                <div class="more">
+                    <div class="card-info">
+                        {% for _ in ''|rjust:game.total_seats %}
+                        {% if forloop.counter <= game.filled_seats %}
+                        <img class="img-seat" src="{% static 'icon\icon_fill.png' %}">
+                        {% else %}
+                        <img class="img-seat" src="{% static 'icon\icon_empty.png' %}">
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div class="more-desc">{{ game.description|safe }}</div>
+                </div>
+            </div>
+            {% if request.user.is_authenticated %}
+            <div><button>Записаться</button></div>
+            {% else %}
+            <div><button type="button" onclick="open_close_login('login');">Войти</button></div>
+            {% endif %}
+        </div>
+    {% endif %}
+    {% endfor %}
+    </div>
+</section>
+{% endfor %}
+{% endblock %}

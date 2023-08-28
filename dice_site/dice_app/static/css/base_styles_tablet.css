@@ -1,0 +1,113 @@
+@import url('base.css');
+
+.body {
+	background-color: rgb(255, 255, 255);
+	flex-direction: row;
+	justify-content: stretch;
+	display: flex;
+	width: 100%;
+	position: fixed;
+	z-index: 11;
+}
+
+header {
+	position: static;
+	flex-direction: row;
+	height: 80px;
+	min-width: 275px;
+	transition: width 0.3s ease, min-height 0.3s ease, margin 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo {
+	margin-left: 10px;
+	flex-direction: row;
+	font-size: x-large;
+	justify-content: left;
+	display: flex;
+	align-items: center;
+	padding-bottom: 0;
+}
+
+.logo img {
+	height: 80px;
+}
+
+.menu-button {
+	display: block;
+	height: 60px;
+	width: 60px;
+	border: none;
+	background-color: white;
+	cursor: pointer;
+}
+
+.menu-button:before {
+	content: "\f0c9";
+	font-family: Awesome;
+	font-size: 36px;
+}
+
+.menu-button.open:before {
+    content: "\f00d";
+}
+
+.menu {
+	display: none;
+	opacity: 0;
+}
+
+.menu.open {
+	display: block;
+	padding: 0px 10px;
+	animation: fadeIn 0.4s ease-in-out; 
+	font-size: x-large;
+	opacity: 1;
+}
+
+header.open {
+	background-color: rgb(255, 255, 255);
+	width: 275px;
+	min-height: 100vh;
+	margin: 0px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	position: absolute;
+	box-shadow: 0px 0px 30px rgba(75, 190, 250, .3);
+	z-index: 11;
+}
+
+.link {
+	display: none;
+	opacity: 0;
+}
+
+.link.open {
+	padding: 50px 10px 22px 10px;
+	display: flex;
+	justify-content: space-around;
+	animation: fadeIn 0.4s ease-in-out;
+	opacity: 1;
+}
+
+.head-menu {
+	justify-content: right;
+	position: absolute;
+	min-width: calc(100% - 275px);
+}
+
+.login {
+	padding: 0 15px 0 20px;
+}
+
+main {
+	margin: 0;
+}
+
+.body-main {
+    margin: 70px 10px 0 10px;
+}
+
+.card {
+	margin: 10px;
+}

@@ -1,0 +1,33 @@
+{% load static %}
+<div class="body-login">
+    <div class="login-page">
+        <div class="form">
+            <button type="button" id="login-close" onclick="open_close_login('close');"></button>
+            <form class="register-form" method="POST">
+                <h2><i class="fas fa-lock"></i>Регистрация</h2>
+                {% csrf_token %}
+                {% for field in form_register %}
+                {% if field.errors %}
+                {{ field.errors }}
+                {% endif %}
+                {{ field }}
+                {% endfor %}
+                <button type="submit" name="register-btn">Создать</button>
+                <p class="message">Уже зарегистрированны? <a onclick="create_login();">Войти</a></p>
+            </form>
+            <form class="login-form" method="post">
+                <h2><i class="fas fa-lock"></i>Вход</h2>
+                {% csrf_token %}
+                {{ form_login.non_field_errors }}
+                {% for field in form_login %}
+                {% if field.errors %}
+                {{ field.errors }}
+                {% endif %}
+                {{ field }}
+                {% endfor %}
+                <button type="submit" name="login-btn">Войти</button>
+                <p class="message">Нет аккаунта? <a onclick="create_login();">Зарегистрироваться</a></p>
+            </form>
+        </div>
+    </div>
+</div>

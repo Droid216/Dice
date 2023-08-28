@@ -1,0 +1,112 @@
+@import url('login.css');
+@import url('header.css');
+@import url('record.css');
+@import url('profile.css');
+
+@font-face {
+	font-family: "Veles";
+	src: url("../font/Veles.ttf");
+}
+
+@font-face {
+	font-family: "Poiret One";
+	src: url("../font/Poiret One.ttf");
+}
+
+@font-face {
+	font-family: "Awesome";
+	src: url("../font/Awesome.ttf");
+}
+
+
+body
+{
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: large;
+	margin: 0px;
+
+}
+
+body.open {
+	overflow: hidden;
+}
+
+header {
+	background-color: rgb(255, 255, 255);
+	position: fixed;
+	width: 275px;
+	min-height: 100%;
+	margin: 0px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	text-align: center;
+	box-shadow: 0px 0px 30px rgba(75, 190, 250, .3);
+	z-index: 11;
+}
+
+.head-menu {
+	background-color: rgb(255, 255, 255);
+	position: fixed;
+	display: flex;
+	justify-content: space-between;
+	width: calc(100% - 275px);
+	height: 80px;
+	left: 275px;
+	align-items: center;
+	box-shadow: 20px 0 30px rgba(75, 190, 250, .3);
+	z-index: 11;
+}
+
+.left-head-menu{
+	margin-left: 15px;
+	width: 100%;
+}
+
+.login {
+    padding: 0 20px 0 30px;
+}
+
+.profile-btn {
+	width: 50px;
+	height: 50px;
+	background: white;
+	border: none;
+	cursor: pointer;
+}
+
+.login-btn {
+	height: 100%;
+	border: none;
+	background: white;
+	font-size: x-large;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.login-btn:after {
+	display: block;
+	left: 0;
+	width: 0;
+	height: 2px;
+	content: "";
+	transition: width 0.3s ease-out;
+	background-color: black;
+}
+
+.login-btn:hover:after, .login-btn:focus:after {
+	width: 100%;
+}
+
+.body-main {
+    margin-top: 70px;
+}
+
+main {
+	width: auto;
+	margin: 0 20px 0 300px;
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	overflow-x: hidden;
+}

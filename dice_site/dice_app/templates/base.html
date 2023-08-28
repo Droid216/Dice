@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+
+        <link rel="stylesheet" href="{% static 'css\base.css' %}?version={% now 'U' %}" media="screen and (min-width: 1025px)">
+        <link rel="stylesheet" href="{% static 'css\base_styles_tablet.css' %}?version={% now 'U' %}" media="screen and (max-width: 1024px) and (min-width: 768px)">
+        <link rel="stylesheet" href="{% static 'css\base_styles_mobile.css' %}?version={% now 'U' %}" media="screen and (max-width: 767px)">
+        <link rel="stylesheet" href="{% static 'css\owl.carousel.min.css' %}?version={% now 'U' %}">
+        <link rel="stylesheet" href="{% static 'css\owl.theme.default.min.css' %}?version={% now 'U' %}">
+
+        <link rel="shortcut icon" href="{% static 'icon\dice_logo.png' %}" type="image/png">
+        <title>Dice {% block title %}{% endblock %}</title>
+    </head>
+    <body>
+        {% if not request.user.is_authenticated %}
+            {% include "login.html" %}
+        {% endif %}
+        <div class="body">
+            <header>
+                {% include "header.html" %}
+            </header>
+            <div class="head-menu">
+                <div class="left-head-menu">
+                {% block head_menu %}
+                {% endblock %}
+                </div>
+                {% if request.user.is_authenticated %}
+                    <div class="login">
+                        <img class="profile-btn" src="{{ profile.avatars.url }}" onclick="document.location='/profile'" alt="Avatar">
+                    </div>
+                {% else %}
+                    <div class="login">
+                        <button type="button" class="login-btn" onclick="open_close_login('login');">Login</button>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+        <main>
+            <div class="body-main">
+                {% block main %}
+                {% endblock %}
+            </div>
+        </main>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="{% static 'js/main.js' %}?version={% now 'U' %}"></script>
+        <script src="{% static 'js/owl.carousel.min.js' %}?version={% now 'U' %}"></script>
+
+        <script>
+            {% if not request.user.is_authenticated %}
+                {% if show_login %}
+                    open_close_login('login');
+                    {% if show_register %}
+                        create_login();
+                    {% endif %}
+                {% endif %}
+            {% endif %}
+        </script>
+    </body>
+</html>

@@ -1,0 +1,108 @@
+.head-header {
+	display: flex;
+	flex-direction: column;
+}
+
+.logo {
+	padding-bottom: 50px;
+	font-family: "Veles", sans-serif;
+	font-size: 50px;
+}
+
+.logo img {
+	height: 160px;
+	animation-duration: 2s;
+  	animation-name: flame;
+ 	animation-iteration-count: infinite;
+ 	animation-direction: alternate;
+}
+
+.logo img {
+  filter: drop-shadow(-2px -15px 15px rgba(75, 190, 250, 0.7));
+}
+
+@keyframes flame {
+  from {
+    filter: drop-shadow(-2px -15px 15px rgba(75, 190, 250, 0.3));
+  }
+
+  to {
+    filter: drop-shadow(-2px -15px 15px rgba(75, 190, 250, 0.7));
+  }
+}
+
+.logo a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.city form {
+	display: flex;
+	justify-content: center;
+}
+
+.city-selector {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	border: none;
+	outline: none;
+	-webkit-appearance: none;
+	background-color: white;
+	width: 30%;
+	margin-left: 5px;
+	padding-left: 5px;
+	font-size: 18px;
+}
+
+.point:before {
+	content: "\f041";
+	font-family: Awesome;
+
+}
+
+.menu-button {
+	display: none;
+}
+
+.menu {
+	padding: 0px 10px;
+	font-size: x-large;
+}
+
+.menu ul, .card-desc ul {
+	display: block;
+	padding: 0 10px;
+	list-style-type: none;
+	text-align: left;
+}
+
+.menu li {
+	display: list-item;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.menu li:hover {
+	background-color: rgba(75, 190, 250, .3);
+}
+
+.menu a {
+	color: inherit;
+	text-decoration: none;
+	padding: 10px;
+	display: flex;
+}
+
+.link {
+	padding: 50px 10px 22px 10px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.link img {
+	height: 40px;
+}
+
+.icon {
+	display: flex;
+	flex-direction: column;
+	font-size: 12px;
+}

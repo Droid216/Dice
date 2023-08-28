@@ -1,0 +1,116 @@
+.body-login {
+	font-family: "Poiret One", sans-serif;
+	font-weight: bold;
+	display: none;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	align-items: center;
+	justify-content: center;
+	z-index: 30;
+	position: fixed;
+	background-color: rgb(255, 255, 255, 0.7);
+}
+
+.login-page {
+	width: 400px;
+	padding: 8% 0 0;
+	margin: auto;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+.form {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 2;
+	background: #FFFFFF;
+	width: 350px;
+	margin: 0 auto 100px;
+	padding: 45px;
+	text-align: center;
+	border-radius: 15px;
+	border: 2px solid rgba(75, 190, 250);
+}
+
+.form input {
+	outline: 0;
+	background: #f2f2f2;
+	width: 100%;
+	border: 0;
+	border-radius: 7px;
+	margin: 0 0 15px;
+	padding: 15px;
+	box-sizing: border-box;
+	font-size: 14px;
+}
+
+.form button {
+	text-transform: uppercase;
+	background: rgba(75, 190, 250);
+	width: 100%;
+	border: 0;
+	padding: 15px;
+	color: #FFFFFF;
+	border-radius: 7px;
+	font-size: 14px;
+	transition: all 0.3 ease;
+	cursor: pointer;
+}
+
+.form button:hover, .form button:active, .form button:focus {
+	background-color: rgb(80, 255, 140);
+}
+
+#login-close {
+	position: absolute;
+	background-color: inherit;
+	padding: 0;
+	height: 25px;
+	width: 25px;
+	right: 10px;
+	top: 10px;
+}
+
+#login-close:before {
+	content: "\f00d";
+	font-family: Awesome;
+	font-size: 24px;
+	color: black;
+}
+
+.form .message {
+	margin: 15px 0 0;
+	color: #b3b3b3;
+	font-size: 13px;
+}
+
+.form .message a {
+	color: #234666;
+	text-decoration: none;
+    cursor: pointer;
+}
+
+.form .register-form {
+	display: none;
+}
+
+.errorlist {
+    font-family: sans-serif;
+    color: red;
+    list-style-type: none;
+    font-size: 12px;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}

@@ -1,0 +1,63 @@
+@import url('base_styles_tablet.css');
+
+header {
+	max-width: 275px;
+}
+
+header.open {
+	background-color: rgb(255, 255, 255);
+	min-width: 100%;
+	min-height: 100%;
+	margin: 0px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	position: fixed;
+	box-shadow: none;
+	z-index: 11;
+}
+
+.head-menu {
+	left: 275px;
+	justify-content: right;
+	min-width: 80px;
+}
+
+.head-menu.open {
+	box-shadow: none;
+}
+
+.left-head-menu {
+	position: absolute;
+	top: 80px;
+	margin: 0px;
+	padding: 10px 0;
+	margin-left: 0px;
+	background-color: rgb(255, 255, 255);
+	width: 100vw;
+	box-shadow: 0 4px 5px 0 rgba(75, 190, 250, 0.2);
+}
+
+.profile-menu, .record-menu {
+	float: none;
+}
+
+.left-head-menu.open, .left-head-menu.scroll {
+	display: none;
+}
+
+.body-main {
+    margin: 120px 10px 0 10px;
+}
+
+.body.scroll {
+	box-shadow: 0 4px 5px 0 rgba(75, 190, 250, 0.2);
+}
+
+.form {
+	width: 250px;
+}
+
+.body-menu {
+	margin-top: 130px;
+}
