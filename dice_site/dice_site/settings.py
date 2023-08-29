@@ -83,12 +83,12 @@ WSGI_APPLICATION = 'dice_site.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.' + os.getenv('ENGINE'),
-        'NAME': os.getenv('NAME'),
+        'ENGINE': 'django.db.backends.' + os.getenv('ENGINE_DB'),
+        'NAME': os.getenv('NAME_DB'),
         'USER': os.getenv('USER_DB'),
-        'PASSWORD': os.getenv('PASSWORD'),
-        'HOST': os.getenv('HOST'),
-        'PORT': os.getenv('PORT'),
+        'PASSWORD': os.getenv('PASSWORD_DB'),
+        'HOST': os.getenv('HOST_DB'),
+        'PORT': os.getenv('PORT_DB'),
     }
 }
 
